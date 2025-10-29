@@ -1,0 +1,32 @@
+html,body {
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background-color: #f0f0f0;
+}
+main {
+  max-width: 60ch;
+  margin: 10vh auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+  margin-bottom: .2rem;
+  color: #333;
+}
+.tag {
+  display:inline-block;
+  padding:.2rem .5rem;
+  border:1px solid #ccc;
+  border-radius:.4rem;
+  font-size:.85rem;
+  background-color: #eee;
+}
+.log {
+  font-size: .8rem;
+  color: #666;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}

@@ -1,0 +1,30 @@
+services:
+  hello-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    container_name: hello-app
+    environment:
+      - TZ=America/Los_Angeles
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  hello-nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hello-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - hello-app
+    environment:
+      - TZ=America/Los_Angeles
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
